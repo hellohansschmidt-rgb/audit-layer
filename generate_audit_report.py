@@ -88,6 +88,47 @@ def parse_org_and_test(nodeid: str):
     return func, "unknown"
 
 
+def load_declared(org: str) -> dict:
+    """Self-assessment answers for one org: {control_id: bool}."""
+    path = ROOT / f"declared_{org}.json"
+    if not path.exists():
+        return {}
+    return json.loads(path.read_text())
+
+
+def reconcile(declared: bool | None, test_outcome: str | None) -> str:
+    """The only decision logic in the reconciliation engine. Deterministic,
+    no LLM in the path -- see reconciliation_mapping_spec.md."""
+    if test_outcome is None:
+        return "NOT_OBSERVABLE"
+    passed = test_outcome == "passed"
+    if declared is True:
+        return "CONFIRMED" if passed else "CONTRADICTED"
+    if declared is False:
+        return "UNDERSTATED" if passed else "CONSISTENT_GAP"
+    return "NOT_OBSERVABLE"   # declared is None / unanswered
+
+
+def build_reconciliation(org: str, results: list[dict]) -> list[dict]:
+    """Join test outcomes for one org against its declared answers,
+    one record per control, per the Build brief data structure."""
+    declared = load_declared(org)
+    records = []
+    for r in results:
+        control_id = r["control_id"]
+        declared_answer = declared.get(control_id) if control_id else None
+        records.append({
+            "control_id": control_id,
+            "claim_text": r["claim_text"],
+            "declared": declared_answer,
+            "test_name": r["test_name"],
+            "clause": r["clause"],
+            "test_outcome": r["status"],
+            "state": reconcile(declared_answer, r["status"]),
+        })
+    return records
+
+
 def build_report():
     data = json.loads(REPORT_JSON.read_text())
     by_org = defaultdict(list)
