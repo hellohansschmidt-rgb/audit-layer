@@ -231,7 +231,11 @@ def build_report():
             "**Shadow AI note:** Telemetry only covers instrumented systems. "
             "A clean run here means nothing to report from the systems we "
             "can see -- it is not evidence of the absence of unregistered "
-            "AI use elsewhere in the organisation.\n",
+            "AI use elsewhere in the organisation.",
+            "**Clause mapping caveat:** The ISO/IEC 42001 clause references "
+            "below are a starting mapping, not a certified crosswalk. "
+            "Verify each citation against the actual clause text before "
+            "this goes in front of a client.\n",
             "| Control | ISO/IEC 42001 Reference | Status |",
             "|---|---|---|",
         ]
