@@ -121,8 +121,8 @@ def load_declared(org: str) -> dict:
 def reconcile(declared: bool | None, test_outcome: str | None) -> str:
     """The only decision logic in the reconciliation engine. Deterministic,
     no LLM in the path -- see reconciliation_mapping_spec.md."""
-    if test_outcome is None:
-        return "NOT_OBSERVABLE"
+    if test_outcome is None or test_outcome in ("error", "skipped"):
+        return "NOT_OBSERVABLE"   # broken/skipped test gives no signal on the control
     passed = test_outcome == "passed"
     if declared is True:
         return "CONFIRMED" if passed else "CONTRADICTED"
