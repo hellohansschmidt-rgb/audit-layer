@@ -1,0 +1,257 @@
+[
+  {
+    "trace_id": "96d3dce49ebe430d9d8dbfd5766a7632",
+    "span_id": "fd7308ae79e34fef",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-01T04:39:11.634456+00:00",
+    "attributes": {
+      "org_id": "org_regulated_finance",
+      "agent_id": "compliance-auditor-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 964,
+      "latency_sla_ms": 2000,
+      "model_confidence": 0.89,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "91a1526df59c42159487ff9f19e952b7",
+    "span_id": "3e5add2396e34ecf",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-02T14:12:11.634511+00:00",
+    "attributes": {
+      "org_id": "org_regulated_finance",
+      "agent_id": "manual-rag-v1",
+      "input_contains_pii": true,
+      "output_contains_pii": true,
+      "latency_ms": 1134,
+      "latency_sla_ms": 2000,
+      "model_confidence": 0.94,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "d55c8b33d5364eca8890e5e99cfb4dba",
+    "span_id": "13759d935c11410e",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-02T23:16:11.634463+00:00",
+    "attributes": {
+      "org_id": "org_regulated_finance",
+      "agent_id": "contract-reviewer-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 1532,
+      "latency_sla_ms": 2000,
+      "model_confidence": 0.98,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "a938fbe4ec7d453b93efc36ca832bbf3",
+    "span_id": "8b3df15042874013",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-02T00:03:11.634408+00:00",
+    "attributes": {
+      "org_id": "org_regulated_finance",
+      "agent_id": "manual-rag-v1",
+      "input_contains_pii": true,
+      "output_contains_pii": false,
+      "latency_ms": 653,
+      "latency_sla_ms": 2000,
+      "model_confidence": 0.82,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "0fd308f1e89043ecbd2bdadd85097921",
+    "span_id": "8c6f3da39ba141db",
+    "name": "agent.invoke",
+    "timestamp": "2026-06-30T18:42:11.634420+00:00",
+    "attributes": {
+      "org_id": "org_regulated_finance",
+      "agent_id": "manual-rag-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 1252,
+      "latency_sla_ms": 2000,
+      "model_confidence": 0.85,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "86c66cc3d8014fbb9e1140c6f308c157",
+    "span_id": "bd81dd84186e432a",
+    "name": "agent.invoke",
+    "timestamp": "2026-06-30T09:11:11.634434+00:00",
+    "attributes": {
+      "org_id": "org_regulated_finance",
+      "agent_id": "manual-rag-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 1788,
+      "latency_sla_ms": 2000,
+      "model_confidence": 0.88,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "f27f13169cf94c5dbb4565f8e5e78204",
+    "span_id": "7ba66a85028840ec",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-01T23:39:11.634383+00:00",
+    "attributes": {
+      "org_id": "org_regulated_finance",
+      "agent_id": "compliance-auditor-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 567,
+      "latency_sla_ms": 2000,
+      "model_confidence": 0.88,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "d28395c408404342881bfe34bd59a333",
+    "span_id": "74b6a76b41e6478d",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-01T01:18:11.634486+00:00",
+    "attributes": {
+      "org_id": "org_regulated_finance",
+      "agent_id": "compliance-auditor-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 1547,
+      "latency_sla_ms": 2000,
+      "model_confidence": 0.81,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "7bccad15c3cd40bf9dedb5676f155340",
+    "span_id": "a0ee0bb0a2ac4c68",
+    "name": "agent.invoke",
+    "timestamp": "2026-06-30T14:28:11.634427+00:00",
+    "attributes": {
+      "org_id": "org_regulated_finance",
+      "agent_id": "manual-rag-v1",
+      "input_contains_pii": true,
+      "output_contains_pii": false,
+      "latency_ms": 994,
+      "latency_sla_ms": 2000,
+      "model_confidence": 0.79,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "76ab74d4477941fe9dcf5e9c90c5c297",
+    "span_id": "82dc97f266104914",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-01T22:49:11.634449+00:00",
+    "attributes": {
+      "org_id": "org_regulated_finance",
+      "agent_id": "compliance-auditor-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 739,
+      "latency_sla_ms": 2000,
+      "model_confidence": 0.87,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "22e0499bfa04476c90eaae886249db38",
+    "span_id": "6f64c5b6729d4040",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-03T01:11:11.634471+00:00",
+    "attributes": {
+      "org_id": "org_regulated_finance",
+      "agent_id": "compliance-auditor-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 1678,
+      "latency_sla_ms": 2000,
+      "model_confidence": 0.8,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "c402fd9a05ef40b0b8bb5940d4591294",
+    "span_id": "1d7d1e83dcb34cc5",
+    "name": "agent.invoke",
+    "timestamp": "2026-06-30T21:18:11.634494+00:00",
+    "attributes": {
+      "org_id": "org_regulated_finance",
+      "agent_id": "manual-rag-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": true,
+      "latency_ms": 1557,
+      "latency_sla_ms": 2000,
+      "model_confidence": 0.8,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "ac50f062d36a460888b1d02f9deb5f68",
+    "span_id": "0b64cf9bc8c14334",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-01T11:01:11.634442+00:00",
+    "attributes": {
+      "org_id": "org_regulated_finance",
+      "agent_id": "compliance-auditor-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 917,
+      "latency_sla_ms": 2000,
+      "model_confidence": 0.84,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "029c216df84444568b2a70f81f8c1147",
+    "span_id": "065f334c312644e5",
+    "name": "agent.invoke",
+    "timestamp": "2026-06-30T13:51:11.634502+00:00",
+    "attributes": {
+      "org_id": "org_regulated_finance",
+      "agent_id": "contract-reviewer-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 2518,
+      "latency_sla_ms": 2000,
+      "model_confidence": 0.99,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "6c96af727a0742668d76f9507a5fecc5",
+    "span_id": "3efde67504d846b1",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-03T00:24:11.634479+00:00",
+    "attributes": {
+      "org_id": "org_regulated_finance",
+      "agent_id": "manual-rag-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 633,
+      "latency_sla_ms": 2000,
+      "model_confidence": 0.82,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  }
+]

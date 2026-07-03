@@ -1,0 +1,257 @@
+[
+  {
+    "trace_id": "3111a46a73ea481f9c0afc560e401c3a",
+    "span_id": "e9c6e4ce219c4043",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-01T13:02:11.634905+00:00",
+    "attributes": {
+      "org_id": "org_startup_fast_iteration",
+      "agent_id": "compliance-auditor-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 2694,
+      "latency_sla_ms": 5000,
+      "model_confidence": 0.79,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "30e1f382d01d4eb2b73047fc3534fa7c",
+    "span_id": "93ce9ecf50ed47f8",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-02T22:16:11.634956+00:00",
+    "attributes": {
+      "org_id": "org_startup_fast_iteration",
+      "agent_id": "compliance-auditor-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 3941,
+      "latency_sla_ms": 5000,
+      "model_confidence": 0.93,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "06b75204a30a4eb4ab6542fd154908cc",
+    "span_id": "06e07042487f479d",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-02T20:26:11.634920+00:00",
+    "attributes": {
+      "org_id": "org_startup_fast_iteration",
+      "agent_id": "contract-reviewer-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 3695,
+      "latency_sla_ms": 5000,
+      "model_confidence": 0.91,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "c7dee90c2d0642d1bf0a6c4df6ae4914",
+    "span_id": "da01e6780a124f6f",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-03T06:13:11.634896+00:00",
+    "attributes": {
+      "org_id": "org_startup_fast_iteration",
+      "agent_id": "compliance-auditor-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 2860,
+      "latency_sla_ms": 5000,
+      "model_confidence": 0.87,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "086834616db140a8a5b1767ebf83f187",
+    "span_id": "36d821972d9a42a6",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-01T02:12:11.634977+00:00",
+    "attributes": {
+      "org_id": "org_startup_fast_iteration",
+      "agent_id": "manual-rag-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 5457,
+      "latency_sla_ms": 5000,
+      "model_confidence": 0.88,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "9d0a1ca6685a4654aa765c87aaa2d8fd",
+    "span_id": "842c261962004e2f",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-01T15:52:11.634970+00:00",
+    "attributes": {
+      "org_id": "org_startup_fast_iteration",
+      "agent_id": "manual-rag-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 2616,
+      "latency_sla_ms": 5000,
+      "model_confidence": 0.98,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "22f877e64f63408ea0b8ccf9594fc182",
+    "span_id": "87430584a59c45f5",
+    "name": "agent.invoke",
+    "timestamp": "2026-06-30T15:26:11.634949+00:00",
+    "attributes": {
+      "org_id": "org_startup_fast_iteration",
+      "agent_id": "manual-rag-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 1927,
+      "latency_sla_ms": 5000,
+      "model_confidence": 0.9,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "bcd7f28c25394313814825892ce61972",
+    "span_id": "eb1eb64de6be47d0",
+    "name": "agent.invoke",
+    "timestamp": "2026-06-30T20:12:11.634991+00:00",
+    "attributes": {
+      "org_id": "org_startup_fast_iteration",
+      "agent_id": "contract-reviewer-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 5373,
+      "latency_sla_ms": 5000,
+      "model_confidence": 0.81,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "fa7a222bb62f4c158f731564a87c1b41",
+    "span_id": "a845657ba12b4ced",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-01T09:38:11.634928+00:00",
+    "attributes": {
+      "org_id": "org_startup_fast_iteration",
+      "agent_id": "contract-reviewer-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 439,
+      "latency_sla_ms": 5000,
+      "model_confidence": 0.97,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "88359fe264fe41dfba7356ece3d09330",
+    "span_id": "b5cd9815b1c9416d",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-02T07:09:11.634942+00:00",
+    "attributes": {
+      "org_id": "org_startup_fast_iteration",
+      "agent_id": "contract-reviewer-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 2324,
+      "latency_sla_ms": 5000,
+      "model_confidence": 0.75,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "98910feab2a9438eb49d8d1a784b69eb",
+    "span_id": "33c68e9f70964ef5",
+    "name": "agent.invoke",
+    "timestamp": "2026-06-30T21:05:11.634913+00:00",
+    "attributes": {
+      "org_id": "org_startup_fast_iteration",
+      "agent_id": "contract-reviewer-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 1144,
+      "latency_sla_ms": 5000,
+      "model_confidence": 0.92,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "9a8baab4da9b4d32936ae00deed1d77d",
+    "span_id": "73dfbb46a3b8425b",
+    "name": "agent.invoke",
+    "timestamp": "2026-06-30T08:31:11.634880+00:00",
+    "attributes": {
+      "org_id": "org_startup_fast_iteration",
+      "agent_id": "compliance-auditor-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 1142,
+      "latency_sla_ms": 5000,
+      "model_confidence": 0.85,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "e61fd443ca5c4e51943eab4cc2bde75a",
+    "span_id": "9d7951ab86f24e39",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-02T18:48:11.634935+00:00",
+    "attributes": {
+      "org_id": "org_startup_fast_iteration",
+      "agent_id": "contract-reviewer-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 3714,
+      "latency_sla_ms": 5000,
+      "model_confidence": 0.96,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "01ae904cc52b45c780fc4e5c66423a73",
+    "span_id": "4d4aecec88bc4054",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-01T09:42:11.634963+00:00",
+    "attributes": {
+      "org_id": "org_startup_fast_iteration",
+      "agent_id": "contract-reviewer-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 1033,
+      "latency_sla_ms": 5000,
+      "model_confidence": 0.97,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "834dfe98f6724a0788f4c56b98252788",
+    "span_id": "ce8e78528df64cc4",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-01T09:41:11.634984+00:00",
+    "attributes": {
+      "org_id": "org_startup_fast_iteration",
+      "agent_id": "compliance-auditor-v1",
+      "input_contains_pii": true,
+      "output_contains_pii": true,
+      "latency_ms": 602,
+      "latency_sla_ms": 5000,
+      "model_confidence": 0.87,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  }
+]

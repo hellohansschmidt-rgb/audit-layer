@@ -1,0 +1,261 @@
+[
+  {
+    "trace_id": "c4ae6c93695f49459b71e7857cfc6712",
+    "span_id": "af6e9c31bb1248e3",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-01T17:39:11.633639+00:00",
+    "attributes": {
+      "org_id": "org_conservative_industrial",
+      "agent_id": "manual-rag-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 1635,
+      "latency_sla_ms": 3000,
+      "model_confidence": 0.9,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "5a409c08eabe4a7a9a6c12e661eede40",
+    "span_id": "bf121359c43c4613",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-02T07:09:11.633701+00:00",
+    "attributes": {
+      "org_id": "org_conservative_industrial",
+      "agent_id": "contract-reviewer-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 2356,
+      "latency_sla_ms": 3000,
+      "model_confidence": 0.89,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "14afee81797344c9bc404819f957030b",
+    "span_id": "8755594e2fc144d4",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-02T03:03:11.633606+00:00",
+    "attributes": {
+      "org_id": "org_conservative_industrial",
+      "agent_id": "contract-reviewer-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 2174,
+      "latency_sla_ms": 3000,
+      "model_confidence": 0.96,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "6af13fb53a8c42528321528bc9241ce8",
+    "span_id": "2a672040574a4a6d",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-03T05:08:11.633729+00:00",
+    "attributes": {
+      "org_id": "org_conservative_industrial",
+      "agent_id": "manual-rag-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 4387,
+      "latency_sla_ms": 3000,
+      "model_confidence": 0.84,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "a67f5ee2a58e4de8889891e39fe16216",
+    "span_id": "e89fc74c0d5e4ecd",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-01T22:54:11.633664+00:00",
+    "attributes": {
+      "org_id": "org_conservative_industrial",
+      "agent_id": "contract-reviewer-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 791,
+      "latency_sla_ms": 3000,
+      "model_confidence": 0.91,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "0c0327e8aec64abaabcd8b6236195ff2",
+    "span_id": "7035a576ea284531",
+    "name": "agent.invoke",
+    "timestamp": "2026-06-30T22:27:11.633648+00:00",
+    "attributes": {
+      "org_id": "org_conservative_industrial",
+      "agent_id": "compliance-auditor-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 700,
+      "latency_sla_ms": 3000,
+      "model_confidence": 0.75,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "31daeb4d71de456fbfd508c880de0fb1",
+    "span_id": "09829c76122c4b38",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-01T06:29:11.633557+00:00",
+    "attributes": {
+      "org_id": "org_conservative_industrial",
+      "agent_id": "manual-rag-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 451,
+      "latency_sla_ms": 3000,
+      "model_confidence": 0.87,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "b80fc699f77b4f9288cb27e2c2861892",
+    "span_id": "e1f0f8f520084569",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-02T19:44:11.633710+00:00",
+    "attributes": {
+      "org_id": "org_conservative_industrial",
+      "agent_id": "manual-rag-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": true,
+      "latency_ms": 1472,
+      "latency_sla_ms": 3000,
+      "model_confidence": 0.82,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "f07a1298dc7a43be8d8507d50f748c99",
+    "span_id": "5e68052ad177413e",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-02T07:34:11.633686+00:00",
+    "attributes": {
+      "org_id": "org_conservative_industrial",
+      "agent_id": "compliance-auditor-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 1823,
+      "latency_sla_ms": 3000,
+      "model_confidence": 0.9,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "dc366e4a2001478ab35688fe0b1f1ab2",
+    "span_id": "8e7538f16a8f4f9d",
+    "name": "agent.invoke",
+    "timestamp": "2026-06-30T12:03:11.633694+00:00",
+    "attributes": {
+      "org_id": "org_conservative_industrial",
+      "agent_id": "manual-rag-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 1190,
+      "latency_sla_ms": 3000,
+      "model_confidence": 0.84,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "445f4158ae6b4adeab9e2acc9d84123e",
+    "span_id": "7fe7706c675d4ba3",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-01T19:42:11.633622+00:00",
+    "attributes": {
+      "org_id": "org_conservative_industrial",
+      "agent_id": "compliance-auditor-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 1396,
+      "latency_sla_ms": 3000,
+      "model_confidence": 0.82,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "7096c6fe7e124291a0a88c247e3a3f6e",
+    "span_id": "11e62d2d813849e6",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-02T16:50:11.633671+00:00",
+    "attributes": {
+      "org_id": "org_conservative_industrial",
+      "agent_id": "contract-reviewer-v1",
+      "input_contains_pii": true,
+      "output_contains_pii": false,
+      "latency_ms": 568,
+      "latency_sla_ms": 3000,
+      "model_confidence": 0.9,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "e8656f3b03a44c8b93a3da5ca1f636ae",
+    "span_id": "38ad8cac0ea944df",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-01T03:22:11.633678+00:00",
+    "attributes": {
+      "org_id": "org_conservative_industrial",
+      "agent_id": "manual-rag-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 1775,
+      "latency_sla_ms": 3000,
+      "model_confidence": 0.77,
+      "flagged_bias_terms": [
+        "gender-coded-phrase"
+      ],
+      "bias_review_status": "reviewed"
+    }
+  },
+  {
+    "trace_id": "fe55fd30894c4de68eec129553490747",
+    "span_id": "b0fa8e933a284eb2",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-02T06:49:11.633656+00:00",
+    "attributes": {
+      "org_id": "org_conservative_industrial",
+      "agent_id": "contract-reviewer-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 1388,
+      "latency_sla_ms": 3000,
+      "model_confidence": 0.83,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "3abf7f221ba645598a57303b0917bc8c",
+    "span_id": "f5ce6ae903e74435",
+    "name": "agent.invoke",
+    "timestamp": "2026-06-30T23:58:11.633718+00:00",
+    "attributes": {
+      "org_id": "org_conservative_industrial",
+      "agent_id": "manual-rag-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": true,
+      "latency_ms": 1939,
+      "latency_sla_ms": 3000,
+      "model_confidence": 0.93,
+      "flagged_bias_terms": [
+        "protected-class-reference"
+      ],
+      "bias_review_status": null
+    }
+  }
+]
