@@ -150,12 +150,24 @@ def build_report():
 
     generated_at = datetime.now(timezone.utc).isoformat()
 
+    RECONCILIATION_LABELS = {
+        "CONFIRMED": "✅ Confirmed",
+        "CONTRADICTED": "❌ Contradicted",
+        "CONSISTENT_GAP": "⚠️ Consistent gap",
+        "UNDERSTATED": "ℹ️ Understated",
+        "NOT_OBSERVABLE": "— Not observable",
+    }
+
     for org, results in by_org.items():
         lines = [
             f"# AI Act / ISO 42001 Continuous Audit Report",
             f"**Organisation:** {org}  ",
             f"**Generated:** {generated_at}  ",
-            f"**Source:** governance-critic-evals / telemetry compliance suite\n",
+            f"**Source:** governance-critic-evals / telemetry compliance suite  ",
+            "**Data provenance:** Synthetic telemetry (demonstration). The "
+            "evaluation logic, clause mapping and reconciliation run "
+            "unchanged against live OpenTelemetry spans from an "
+            "instrumented system.\n",
             "| Control | ISO/IEC 42001 Reference | Status |",
             "|---|---|---|",
         ]
@@ -169,6 +181,33 @@ def build_report():
             lines.append(f"**{n_fail} control(s) require remediation before next audit cycle.**")
         else:
             lines.append("**All monitored controls passing as of this run.**")
+
+        reconciliation = build_reconciliation(org, results)
+        lines += [
+            "",
+            "## Reconciliation: declared vs. observed",
+            "",
+            "| Control ID | Claim | Declared | Telemetry | State |",
+            "|---|---|---|---|---|",
+        ]
+        for rec in reconciliation:
+            declared_str = {True: "Yes", False: "No", None: "—"}[rec["declared"]]
+            telemetry_str = {"passed": "PASS", "failed": "FAIL", None: "—"}.get(
+                rec["test_outcome"], rec["test_outcome"])
+            state_str = RECONCILIATION_LABELS[rec["state"]]
+            lines.append(
+                f"| {rec['control_id']} | {rec['claim_text']} | "
+                f"{declared_str} | {telemetry_str} | {state_str} |")
+
+        n_contradicted = sum(1 for rec in reconciliation if rec["state"] == "CONTRADICTED")
+        lines.append("")
+        if n_contradicted:
+            lines.append(
+                f"**{n_contradicted} declared control(s) contradicted by "
+                f"telemetry -- the gap between design and operating "
+                f"effectiveness.**")
+        else:
+            lines.append("**No declared controls contradicted by telemetry this cycle.**")
 
         out_path = ROOT / f"audit_report_{org}.md"
         out_path.write_text("\n".join(lines))
