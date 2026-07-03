@@ -24,18 +24,48 @@ from pathlib import Path
 ROOT = Path(__file__).parent
 REPORT_JSON = ROOT / "pytest_report.json"
 
-# test function name -> (short control description, ISO 42001 clause)
+# test function name -> control metadata. control_id/claim_text are the
+# self-assessment side of the mapping in reconciliation_mapping_spec.md;
+# control/clause are the existing short label used in the compliance table.
 CLAUSE_MAP = {
-    "test_no_unredacted_pii_in_outputs": (
-        "Agent outputs do not leak PII", "Clause 8.2"),
-    "test_latency_within_sla": (
-        "Operational performance within defined SLA", "Clause 8.2"),
-    "test_bias_terms_flagged_and_reviewed": (
-        "Flagged bias risks have recorded human review", "Annex A (risk treatment)"),
-    "test_model_confidence_above_floor": (
-        "Low-confidence outputs subject to human oversight", "Clause 8.3"),
-    "test_spans_have_required_audit_fields": (
-        "Audit trail completeness / traceability", "Clause 7.5"),
+    "test_no_unredacted_pii_in_outputs": {
+        "control_id": "ctrl_01",
+        "control": "Agent outputs do not leak PII",
+        "claim_text": (
+            "Agent outputs are screened so personal data is not exposed, "
+            "even when it appears in the input."),
+        "clause": "Clause 8.2",
+    },
+    "test_latency_within_sla": {
+        "control_id": "ctrl_02",
+        "control": "Operational performance within defined SLA",
+        "claim_text": (
+            "AI systems have defined performance thresholds, and breaches "
+            "are detected rather than passing silently."),
+        "clause": "Clause 8.2",
+    },
+    "test_bias_terms_flagged_and_reviewed": {
+        "control_id": "ctrl_03",
+        "control": "Flagged bias risks have recorded human review",
+        "claim_text": (
+            "Bias or fairness risks flagged by the system receive recorded "
+            "human review."),
+        "clause": "Annex A (risk treatment)",
+    },
+    "test_model_confidence_above_floor": {
+        "control_id": "ctrl_04",
+        "control": "Low-confidence outputs subject to human oversight",
+        "claim_text": (
+            "Low-confidence AI outputs are routed to human oversight."),
+        "clause": "Clause 8.3",
+    },
+    "test_spans_have_required_audit_fields": {
+        "control_id": "ctrl_05",
+        "control": "Audit trail completeness / traceability",
+        "claim_text": (
+            "Every AI decision is traceable to an identifiable record."),
+        "clause": "Clause 7.5",
+    },
 }
 
 
@@ -64,10 +94,16 @@ def build_report():
 
     for test in data.get("tests", []):
         name, org = parse_org_and_test(test["nodeid"])
-        control, clause = CLAUSE_MAP.get(name, (name, "unmapped"))
+        meta = CLAUSE_MAP.get(name, {
+            "control_id": None, "control": name,
+            "claim_text": None, "clause": "unmapped",
+        })
         by_org[org].append({
-            "control": control,
-            "clause": clause,
+            "test_name": name,
+            "control_id": meta["control_id"],
+            "control": meta["control"],
+            "claim_text": meta["claim_text"],
+            "clause": meta["clause"],
             "status": test["outcome"],
         })
 
