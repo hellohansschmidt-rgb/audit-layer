@@ -137,8 +137,13 @@ def narrate(rec: dict) -> list[str]:
     runs")."""
     declared_word = {True: "Yes", False: "No", None: "no answer on file"}[rec["declared"]]
     lines = [f"> You reported: **{declared_word}** -- {rec['claim_text']}"]
-    if rec["test_outcome"] is None:
-        lines.append("> Your telemetry shows: no telemetry test exists for this control.")
+    if rec["state"] == "NOT_OBSERVABLE":
+        if rec["test_outcome"] in ("error", "skipped"):
+            lines.append(
+                f"> Your telemetry shows: test **{rec['test_outcome']}** -- "
+                f"no reliable signal on this control.")
+        else:
+            lines.append("> Your telemetry shows: no telemetry test exists for this control.")
         lines.append("> Declaration stands alone -- nothing to compare it against.")
     else:
         outcome_word = "passed" if rec["test_outcome"] == "passed" else "failed"
@@ -155,7 +160,12 @@ def build_reconciliation(org: str, results: list[dict]) -> list[dict]:
     records = []
     for r in results:
         control_id = r["control_id"]
-        declared_answer = declared.get(control_id) if control_id else None
+        if control_id is None:
+            # No CLAUSE_MAP entry for this test -- nothing to reconcile
+            # against. Still visible as PASS/FAIL in the compliance table
+            # above; skip here rather than mislabel a real result NOT_OBSERVABLE.
+            continue
+        declared_answer = declared.get(control_id)
         records.append({
             "control_id": control_id,
             "claim_text": r["claim_text"],
