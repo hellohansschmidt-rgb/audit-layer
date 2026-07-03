@@ -1,0 +1,87 @@
+[
+  {
+    "trace_id": "demo0001aaaa1111bbbb2222cccc3333",
+    "span_id": "demo0001aaaa1111",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-03T10:00:00+00:00",
+    "attributes": {
+      "org_id": "demo_pipeline_org",
+      "agent_id": "contract-reviewer-v1",
+      "input_contains_pii": true,
+      "output_contains_pii": true,
+      "latency_ms": 1200,
+      "latency_sla_ms": 2500,
+      "model_confidence": 0.91,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "demo0002aaaa1111bbbb2222cccc3333",
+    "span_id": "demo0002aaaa1111",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-03T10:05:00+00:00",
+    "attributes": {
+      "org_id": "demo_pipeline_org",
+      "agent_id": "compliance-auditor-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 1300,
+      "latency_sla_ms": 2500,
+      "model_confidence": 0.88,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "demo0003aaaa1111bbbb2222cccc3333",
+    "span_id": "demo0003aaaa1111",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-03T10:10:00+00:00",
+    "attributes": {
+      "org_id": "demo_pipeline_org",
+      "agent_id": "manual-rag-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 1400,
+      "latency_sla_ms": 2500,
+      "model_confidence": 0.95,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "demo0004aaaa1111bbbb2222cccc3333",
+    "span_id": "demo0004aaaa1111",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-03T10:15:00+00:00",
+    "attributes": {
+      "org_id": "demo_pipeline_org",
+      "agent_id": "contract-reviewer-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 1100,
+      "latency_sla_ms": 2500,
+      "model_confidence": 0.86,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  },
+  {
+    "trace_id": "demo0005aaaa1111bbbb2222cccc3333",
+    "span_id": "demo0005aaaa1111",
+    "name": "agent.invoke",
+    "timestamp": "2026-07-03T10:20:00+00:00",
+    "attributes": {
+      "org_id": "demo_pipeline_org",
+      "agent_id": "compliance-auditor-v1",
+      "input_contains_pii": false,
+      "output_contains_pii": false,
+      "latency_ms": 1500,
+      "latency_sla_ms": 2500,
+      "model_confidence": 0.90,
+      "flagged_bias_terms": [],
+      "bias_review_status": null
+    }
+  }
+]

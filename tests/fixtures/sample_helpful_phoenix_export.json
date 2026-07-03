@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "1.0",
+  "source": "ai-governance-assessment",
+  "generatedAt": "2026-07-03T12:00:00.000Z",
+  "organisation": "Demo Pipeline Org",
+  "respondent": { "name": "Jane Doe", "role": "Head of AI Governance" },
+  "sector": "technology",
+  "size": "51-200",
+  "country": "DK",
+  "engagementDate": "2026-07-03",
+  "foundation": {
+    "value": "Cuts contract review time by 40% for the legal team.",
+    "owner": "Jane Doe, Head of AI Governance",
+    "wrong": "Fallback to manual review; escalate to Legal Director within 4 hours.",
+    "status": "PASS"
+  },
+  "totalScore": 38,
+  "maturityTier": "Advanced",
+  "domains": [
+    { "id": "policy_strategy", "name": "Policy & Strategy",
+      "questions": [
+        { "id": "policy_strategy_q1", "score": 3 },
+        { "id": "policy_strategy_q2", "score": 2 },
+        { "id": "policy_strategy_q3", "score": 2 }
+      ], "total": 7 },
+    { "id": "risk_management", "name": "Risk Management",
+      "questions": [
+        { "id": "risk_management_q1", "score": 2 },
+        { "id": "risk_management_q2", "score": 3 },
+        { "id": "risk_management_q3", "score": 1 }
+      ], "total": 6 },
+    { "id": "data_governance", "name": "Data Governance",
+      "questions": [
+        { "id": "data_governance_q1", "score": 2 },
+        { "id": "data_governance_q2", "score": 3 },
+        { "id": "data_governance_q3", "score": 2 }
+      ], "total": 7 },
+    { "id": "transparency_explainability", "name": "Transparency & Explainability",
+      "questions": [
+        { "id": "transparency_explainability_q1", "score": 2 },
+        { "id": "transparency_explainability_q2", "score": 2 },
+        { "id": "transparency_explainability_q3", "score": 1 }
+      ], "total": 5 },
+    { "id": "ethics_fairness", "name": "Ethics & Fairness",
+      "questions": [
+        { "id": "ethics_fairness_q1", "score": 1 },
+        { "id": "ethics_fairness_q2", "score": 2 },
+        { "id": "ethics_fairness_q3", "score": 1 }
+      ], "total": 4 },
+    { "id": "compliance_audit", "name": "Compliance & Audit",
+      "questions": [
+        { "id": "compliance_audit_q1", "score": 2 },
+        { "id": "compliance_audit_q2", "score": 2 },
+        { "id": "compliance_audit_q3", "score": 3 }
+      ], "total": 7 }
+  ]
+}
