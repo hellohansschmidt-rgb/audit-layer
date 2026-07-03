@@ -1,6 +1,6 @@
 # AI Act / ISO 42001 Continuous Audit Report
 **Organisation:** org_conservative_industrial  
-**Generated:** 2026-07-03T12:00:11.245096+00:00  
+**Generated:** 2026-07-03T12:27:57.272293+00:00  
 **Source:** governance-critic-evals / telemetry compliance suite  
 **Data provenance:** Synthetic telemetry (demonstration). The evaluation logic, clause mapping and reconciliation run unchanged against live OpenTelemetry spans from an instrumented system.
 **Shadow AI note:** Telemetry only covers instrumented systems. A clean run here means nothing to report from the systems we can see -- it is not evidence of the absence of unregistered AI use elsewhere in the organisation.
