@@ -3,5 +3,9 @@
     "ctrl_02": false,
     "ctrl_03": true,
     "ctrl_04": true,
-    "ctrl_05": false
+    "ctrl_05": false,
+    "ctrl_06": true,
+    "ctrl_07": true,
+    "ctrl_08": true,
+    "ctrl_09": false
 }

@@ -68,6 +68,28 @@ CLAUSE_MAP = {
     },
 }
 
+# Declaration-only controls -- no telemetry counterpart exists or ever will
+# (see "Not observable in telemetry" in reconciliation_mapping_spec.md).
+# These always resolve to NOT_OBSERVABLE regardless of the declared answer.
+DECLARATION_ONLY_CONTROLS = [
+    {
+        "control_id": "ctrl_06",
+        "claim_text": "A named, accountable AI governance owner exists.",
+    },
+    {
+        "control_id": "ctrl_07",
+        "claim_text": "An approved AI policy is in place.",
+    },
+    {
+        "control_id": "ctrl_08",
+        "claim_text": "Staff have been trained on responsible AI use.",
+    },
+    {
+        "control_id": "ctrl_09",
+        "claim_text": "Model and supplier due diligence has been performed.",
+    },
+]
+
 
 def run_tests():
     subprocess.run(
@@ -109,6 +131,23 @@ def reconcile(declared: bool | None, test_outcome: str | None) -> str:
     return "NOT_OBSERVABLE"   # declared is None / unanswered
 
 
+def narrate(rec: dict) -> list[str]:
+    """Plain-language reconciliation narration for one control, per
+    reconciliation_mapping_spec.md ("What the app should say when it
+    runs")."""
+    declared_word = {True: "Yes", False: "No", None: "no answer on file"}[rec["declared"]]
+    lines = [f"> You reported: **{declared_word}** -- {rec['claim_text']}"]
+    if rec["test_outcome"] is None:
+        lines.append("> Your telemetry shows: no telemetry test exists for this control.")
+        lines.append("> Declaration stands alone -- nothing to compare it against.")
+    else:
+        outcome_word = "passed" if rec["test_outcome"] == "passed" else "failed"
+        lines.append(f"> Your telemetry shows: test **{outcome_word}**.")
+        agree = rec["state"] in ("CONFIRMED", "CONSISTENT_GAP")
+        lines.append(f"> These **{'agree' if agree else 'do not agree'}**.")
+    return lines
+
+
 def build_reconciliation(org: str, results: list[dict]) -> list[dict]:
     """Join test outcomes for one org against its declared answers,
     one record per control, per the Build brief data structure."""
@@ -125,6 +164,17 @@ def build_reconciliation(org: str, results: list[dict]) -> list[dict]:
             "clause": r["clause"],
             "test_outcome": r["status"],
             "state": reconcile(declared_answer, r["status"]),
+        })
+    for c in DECLARATION_ONLY_CONTROLS:
+        declared_answer = declared.get(c["control_id"])
+        records.append({
+            "control_id": c["control_id"],
+            "claim_text": c["claim_text"],
+            "declared": declared_answer,
+            "test_name": None,
+            "clause": None,
+            "test_outcome": None,
+            "state": reconcile(declared_answer, None),
         })
     return records
 
@@ -167,7 +217,11 @@ def build_report():
             "**Data provenance:** Synthetic telemetry (demonstration). The "
             "evaluation logic, clause mapping and reconciliation run "
             "unchanged against live OpenTelemetry spans from an "
-            "instrumented system.\n",
+            "instrumented system.",
+            "**Shadow AI note:** Telemetry only covers instrumented systems. "
+            "A clean run here means nothing to report from the systems we "
+            "can see -- it is not evidence of the absence of unregistered "
+            "AI use elsewhere in the organisation.\n",
             "| Control | ISO/IEC 42001 Reference | Status |",
             "|---|---|---|",
         ]
@@ -198,6 +252,12 @@ def build_report():
             lines.append(
                 f"| {rec['control_id']} | {rec['claim_text']} | "
                 f"{declared_str} | {telemetry_str} | {state_str} |")
+
+        lines += ["", "## What we found, per control", ""]
+        for rec in reconciliation:
+            lines.append(f"**{rec['control_id']}**")
+            lines += narrate(rec)
+            lines.append("")
 
         n_contradicted = sum(1 for rec in reconciliation if rec["state"] == "CONTRADICTED")
         lines.append("")
