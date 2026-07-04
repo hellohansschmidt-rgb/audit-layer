@@ -1,6 +1,6 @@
 # AI Act / ISO 42001 Continuous Audit Report
 **Organisation:** org_startup_fast_iteration  
-**Generated:** 2026-07-03T12:31:12.624960+00:00  
+**Generated:** 2026-07-04T05:28:14.744858+00:00  
 **Source:** governance-critic-evals / telemetry compliance suite  
 **Data provenance:** Synthetic telemetry (demonstration). The evaluation logic, clause mapping and reconciliation run unchanged against live OpenTelemetry spans from an instrumented system.
 **Shadow AI note:** Telemetry only covers instrumented systems. A clean run here means nothing to report from the systems we can see -- it is not evidence of the absence of unregistered AI use elsewhere in the organisation.
@@ -8,19 +8,19 @@
 
 | Control | ISO/IEC 42001 Reference | Status |
 |---|---|---|
-| Agent outputs do not leak PII | Clause 8.2 | ❌ FAIL |
+| Agent outputs do not leak PII | Clause 8.2 | ✅ PASS |
 | Operational performance within defined SLA | Clause 8.2 | ❌ FAIL |
 | Flagged bias risks have recorded human review | Annex A (risk treatment) | ✅ PASS |
 | Low-confidence outputs subject to human oversight | Clause 8.3 | ✅ PASS |
 | Audit trail completeness / traceability | Clause 7.5 | ✅ PASS |
 
-**2 control(s) require remediation before next audit cycle.**
+**1 control(s) require remediation before next audit cycle.**
 
 ## Reconciliation: declared vs. observed
 
 | Control ID | Claim | Declared | Telemetry | State |
 |---|---|---|---|---|
-| ctrl_01 | Agent outputs are screened so personal data is not exposed, even when it appears in the input. | No | FAIL | ⚠️ Consistent gap |
+| ctrl_01 | Agent outputs are screened so personal data is not exposed, even when it appears in the input. | No | PASS | ℹ️ Understated |
 | ctrl_02 | AI systems have defined performance thresholds, and breaches are detected rather than passing silently. | No | FAIL | ⚠️ Consistent gap |
 | ctrl_03 | Bias or fairness risks flagged by the system receive recorded human review. | No | PASS | ℹ️ Understated |
 | ctrl_04 | Low-confidence AI outputs are routed to human oversight. | No | PASS | ℹ️ Understated |
@@ -34,8 +34,8 @@
 
 **ctrl_01**
 > You reported: **No** -- Agent outputs are screened so personal data is not exposed, even when it appears in the input.
-> Your telemetry shows: test **failed**.
-> These **agree**.
+> Your telemetry shows: test **passed**.
+> These **do not agree**.
 
 **ctrl_02**
 > You reported: **No** -- AI systems have defined performance thresholds, and breaches are detected rather than passing silently.

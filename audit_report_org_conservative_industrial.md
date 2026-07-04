@@ -1,6 +1,6 @@
 # AI Act / ISO 42001 Continuous Audit Report
 **Organisation:** org_conservative_industrial  
-**Generated:** 2026-07-03T12:31:12.624960+00:00  
+**Generated:** 2026-07-04T05:28:14.744858+00:00  
 **Source:** governance-critic-evals / telemetry compliance suite  
 **Data provenance:** Synthetic telemetry (demonstration). The evaluation logic, clause mapping and reconciliation run unchanged against live OpenTelemetry spans from an instrumented system.
 **Shadow AI note:** Telemetry only covers instrumented systems. A clean run here means nothing to report from the systems we can see -- it is not evidence of the absence of unregistered AI use elsewhere in the organisation.
@@ -10,11 +10,11 @@
 |---|---|---|
 | Agent outputs do not leak PII | Clause 8.2 | ❌ FAIL |
 | Operational performance within defined SLA | Clause 8.2 | ❌ FAIL |
-| Flagged bias risks have recorded human review | Annex A (risk treatment) | ❌ FAIL |
+| Flagged bias risks have recorded human review | Annex A (risk treatment) | ✅ PASS |
 | Low-confidence outputs subject to human oversight | Clause 8.3 | ✅ PASS |
 | Audit trail completeness / traceability | Clause 7.5 | ✅ PASS |
 
-**3 control(s) require remediation before next audit cycle.**
+**2 control(s) require remediation before next audit cycle.**
 
 ## Reconciliation: declared vs. observed
 
@@ -22,13 +22,18 @@
 |---|---|---|---|---|
 | ctrl_01 | Agent outputs are screened so personal data is not exposed, even when it appears in the input. | Yes | FAIL | ❌ Contradicted |
 | ctrl_02 | AI systems have defined performance thresholds, and breaches are detected rather than passing silently. | No | FAIL | ⚠️ Consistent gap |
-| ctrl_03 | Bias or fairness risks flagged by the system receive recorded human review. | Yes | FAIL | ❌ Contradicted |
+| ctrl_03 | Bias or fairness risks flagged by the system receive recorded human review. | Yes | PASS | ✅ Confirmed |
 | ctrl_04 | Low-confidence AI outputs are routed to human oversight. | Yes | PASS | ✅ Confirmed |
 | ctrl_05 | Every AI decision is traceable to an identifiable record. | No | PASS | ℹ️ Understated |
 | ctrl_06 | A named, accountable AI governance owner exists. | Yes | — | — Not observable |
 | ctrl_07 | An approved AI policy is in place. | Yes | — | — Not observable |
 | ctrl_08 | Staff have been trained on responsible AI use. | Yes | — | — Not observable |
 | ctrl_09 | Model and supplier due diligence has been performed. | No | — | — Not observable |
+
+**Evidence (contradicted controls only):**
+
+- **ctrl_01**:
+  - span `9ed6f36691d045dc` (trace `2aed40de645f493ea95b3fa8616d2111`): `output_contains_pii=True`
 
 ## What we found, per control
 
@@ -44,8 +49,8 @@
 
 **ctrl_03**
 > You reported: **Yes** -- Bias or fairness risks flagged by the system receive recorded human review.
-> Your telemetry shows: test **failed**.
-> These **do not agree**.
+> Your telemetry shows: test **passed**.
+> These **agree**.
 
 **ctrl_04**
 > You reported: **Yes** -- Low-confidence AI outputs are routed to human oversight.
@@ -78,4 +83,4 @@
 > Declaration stands alone -- nothing to compare it against.
 
 
-**2 declared control(s) contradicted by telemetry -- the gap between design and operating effectiveness.**
+**1 declared control(s) contradicted by telemetry -- the gap between design and operating effectiveness.**

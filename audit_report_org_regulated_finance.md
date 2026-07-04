@@ -1,6 +1,6 @@
 # AI Act / ISO 42001 Continuous Audit Report
 **Organisation:** org_regulated_finance  
-**Generated:** 2026-07-03T12:31:12.624960+00:00  
+**Generated:** 2026-07-04T05:28:14.744858+00:00  
 **Source:** governance-critic-evals / telemetry compliance suite  
 **Data provenance:** Synthetic telemetry (demonstration). The evaluation logic, clause mapping and reconciliation run unchanged against live OpenTelemetry spans from an instrumented system.
 **Shadow AI note:** Telemetry only covers instrumented systems. A clean run here means nothing to report from the systems we can see -- it is not evidence of the absence of unregistered AI use elsewhere in the organisation.
@@ -29,6 +29,14 @@
 | ctrl_07 | An approved AI policy is in place. | Yes | — | — Not observable |
 | ctrl_08 | Staff have been trained on responsible AI use. | Yes | — | — Not observable |
 | ctrl_09 | Model and supplier due diligence has been performed. | Yes | — | — Not observable |
+
+**Evidence (contradicted controls only):**
+
+- **ctrl_01**:
+  - span `96ea94a226414743` (trace `6b27e4bae16e4023ba79b99cbc765d53`): `output_contains_pii=True`
+  - span `fea33d613a3b48dd` (trace `eb34f98eac3f4a93a59a81a911ac1e6a`): `output_contains_pii=True`
+- **ctrl_02**:
+  - span `41297265e1a641a1` (trace `9ccd60fb7e0b438fb3ab14f3b29615d5`): latency_ms=2902 > latency_sla_ms=2000 (Δ+902ms)
 
 ## What we found, per control
 

@@ -24,6 +24,37 @@ from pathlib import Path
 ROOT = Path(__file__).parent
 REPORT_JSON = ROOT / "pytest_report.json"
 
+# Reuse the test suite's own span loader rather than re-parsing telemetry/
+# separately -- one source of truth for "what a span is".
+sys.path.insert(0, str(ROOT / "tests"))
+from test_telemetry_compliance import spans_by_org as _spans_by_org  # noqa: E402
+
+# control_id -> fn(spans) -> list[str]. Each extractor mirrors the exact
+# violation predicate used by the corresponding pytest test, so the
+# footnote is read off the span data, never synthesised.
+EVIDENCE_EXTRACTORS = {
+    "ctrl_01": lambda spans: [
+        f"span `{s['span_id']}` (trace `{s['trace_id']}`): `output_contains_pii=True`"
+        for s in spans if s["attributes"]["output_contains_pii"]
+    ],
+    "ctrl_02": lambda spans: [
+        f"span `{s['span_id']}` (trace `{s['trace_id']}`): "
+        f"latency_ms={s['attributes']['latency_ms']} > "
+        f"latency_sla_ms={s['attributes']['latency_sla_ms']} "
+        f"(Δ+{s['attributes']['latency_ms'] - s['attributes']['latency_sla_ms']}ms)"
+        for s in spans if s["attributes"]["latency_ms"] > s["attributes"]["latency_sla_ms"]
+    ],
+}
+
+
+def evidence_for(control_id: str, org: str) -> list[str]:
+    """Deterministic span-level evidence for a CONTRADICTED control.
+    Empty list if no extractor is registered for this control_id."""
+    extractor = EVIDENCE_EXTRACTORS.get(control_id)
+    if not extractor:
+        return []
+    return extractor(_spans_by_org(org))
+
 # test function name -> control metadata. control_id/claim_text are the
 # self-assessment side of the mapping in reconciliation_mapping_spec.md;
 # control/clause are the existing short label used in the compliance table.
@@ -266,6 +297,18 @@ def build_report():
             lines.append(
                 f"| {rec['control_id']} | {rec['claim_text']} | "
                 f"{declared_str} | {telemetry_str} | {state_str} |")
+
+        contradicted = [rec for rec in reconciliation if rec["state"] == "CONTRADICTED"]
+        if contradicted:
+            lines += ["", "**Evidence (contradicted controls only):**", ""]
+            for rec in contradicted:
+                ev = evidence_for(rec["control_id"], org)
+                if ev:
+                    lines.append(f"- **{rec['control_id']}**:")
+                    for line in ev:
+                        lines.append(f"  - {line}")
+                else:
+                    lines.append(f"- **{rec['control_id']}**: no span-level extractor registered.")
 
         lines += ["", "## What we found, per control", ""]
         for rec in reconciliation:
